@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Checkout preview | Laundry Caddie</title>
+  <meta name="robots" content="noindex">
+  <meta name="description" content="Choose a Laundry Caddie weekly wash and fold subscription: Regular Bag $155/month or Large Bag $185/month, with free weekly pickup and delivery in Jacksonville, FL.">
+  <meta name="theme-color" content="#0a6f6b">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="Laundry Caddie home">
+        <img src="assets/favicon.svg" alt="" width="40" height="40">
+        <span>Laundry Caddie</span>
+      </a>
+      <a class="btn btn-small btn-secondary header-back" href="subscribe.html" id="back-to-plan" aria-label="Back to plan choice"><span aria-hidden="true">←</span> Back</a>
+    </div>
+  </header>
+
+  <!-- DEMO NOTE: remove this banner once real Stripe Payment Links are connected -->
+  <p class="demo-banner" role="note"><strong>Demo only:</strong> this is an illustration of the Stripe checkout page, filled with example data. Nothing here can be typed into, and no payment is taken.</p>
+
+  <main id="main" tabindex="-1">
+    <!-- Preview of what the Stripe Payment Link will collect. This is a wireframe, not a form. -->
+    <section class="section section-tint checkout-step" aria-labelledby="checkout-preview-title">
+      <div class="container">
+        <ol class="progress narrow-progress" aria-label="Sign-up steps">
+          <li class="done"><span>✓</span>Choose your bag</li>
+          <li class="current" aria-current="step"><span>2</span>Details &amp; payment</li>
+          <li><span>3</span>We schedule your pickup</li>
+        </ol>
+        <p class="eyebrow center">Step 2 · Stripe checkout (illustration)</p>
+        <h1 id="checkout-preview-title" class="center">Secure checkout</h1>
+        <p class="section-intro center">At launch, "Continue to secure checkout" opens this page on Stripe's own website, with Laundry Caddie's logo and colors.</p>
+
+        <figure class="sc-frame" aria-labelledby="sc-caption">
+          <div class="sc-browser" aria-hidden="true">
+            <span class="sc-dot"></span><span class="sc-dot"></span><span class="sc-dot"></span>
+            <span class="sc-url"><svg viewBox="0 0 24 24" width="12" height="12"><rect x="5" y="10" width="14" height="10" rx="2" fill="currentColor"/><path d="M8 10V7a4 4 0 018 0v3" fill="none" stroke="currentColor" stroke-width="2.4"/></svg>checkout.stripe.com</span>
+          </div>
+          <div class="sc-page" aria-hidden="true">
+            <div class="sc-summary">
+              <div class="sc-merchant"><span class="sc-back">←</span><img src="assets/favicon.svg" alt="" width="28" height="28"><span>Laundry Caddie</span><span class="sc-test">TEST MODE</span></div>
+              <p class="sc-sub wf-plan">Subscribe to <strong>Large Bag</strong></p>
+              <p class="sc-big wf-price">$185.00 <span>per<br>month</span></p>
+              <div class="sc-item">
+                <img src="assets/favicon.svg" alt="" width="40" height="40">
+                <div><p class="sc-item-name"><span class="sc-plan-name">Large Bag</span></p><p class="sc-muted">Weekly pickup &amp; delivery · Billed monthly</p></div>
+                <p class="sc-amt"><span class="sc-amount">$185.00</span></p>
+              </div>
+              <div class="sc-row"><span>Subtotal</span><span class="sc-amount">$185.00</span></div>
+              <div class="sc-row sc-muted"><span>Tax</span><span>$0.00</span></div>
+              <div class="sc-row sc-total"><span>Total due today</span><span class="sc-amount">$185.00</span></div>
+            </div>
+
+            <div class="sc-form">
+              <p class="sc-h">Contact information</p>
+              <div class="sc-group">
+                <div class="sc-field"><span class="sc-lbl">Email</span><span class="sc-val">jordan@example.com</span></div>
+                <div class="sc-field"><span class="sc-lbl">Phone</span><span class="sc-val">(904) 555-0123</span></div>
+              </div>
+
+              <p class="sc-h">Service address</p>
+              <div class="sc-group">
+                <div class="sc-field"><span class="sc-val">Jordan Example</span></div>
+                <div class="sc-field"><span class="sc-val">United States</span><span class="sc-caret">⌄</span></div>
+                <div class="sc-field"><span class="sc-val">123 Example St</span></div>
+                <div class="sc-field sc-split"><span class="sc-val">Jacksonville</span><span class="sc-val">FL</span><span class="sc-val">32207</span></div>
+              </div>
+
+              <p class="sc-h">Neighborhood</p>
+              <div class="sc-group"><div class="sc-field"><span class="sc-val">Downtown, San Marco</span><span class="sc-caret">⌄</span></div></div>
+              <p class="sc-h">Preferred pickup day</p>
+              <div class="sc-group"><div class="sc-field"><span class="sc-val">Tuesday</span><span class="sc-caret">⌄</span></div></div>
+              <p class="sc-h">How did you hear about us? <span class="sc-opt">(optional)</span></p>
+              <div class="sc-group"><div class="sc-field"><span class="sc-val">Friend or family</span><span class="sc-caret">⌄</span></div></div>
+
+              <p class="sc-h">Payment method</p>
+              <div class="sc-group">
+                <div class="sc-field sc-card"><span class="sc-val">4242 4242 4242 4242</span><span class="sc-brands"><i>VISA</i><i>MC</i><i>AMEX</i></span></div>
+                <div class="sc-field sc-split2"><span class="sc-val">12 / 30</span><span class="sc-val">123</span></div>
+                <div class="sc-field"><span class="sc-lbl">Cardholder name</span><span class="sc-val">Jordan Example</span></div>
+              </div>
+
+              <div class="sc-pay">Subscribe</div>
+              <p class="sc-terms">By confirming your subscription, you allow Laundry Caddie to charge you for future payments in accordance with their terms. You can always cancel your subscription.</p>
+              <p class="sc-powered">Powered by <b>stripe</b> &nbsp;|&nbsp; Terms &nbsp; Privacy</p>
+            </div>
+          </div>
+          <figcaption id="sc-caption">Illustration of the Stripe checkout page with example data. Left: Laundry Caddie order summary, <span class="wf-cap-plan">Large Bag, $185</span> per month, total due today. Right: email, phone, service address, neighborhood, preferred pickup day, how you heard about us, card details, and a Subscribe button with Stripe's subscription terms. Not a working form.</figcaption>
+        </figure>
+
+        <div class="checkout-actions">
+          <a class="btn btn-large" id="simulate-pay" href="thanks.html?plan=large">Simulate successful payment</a>
+          <p class="fine-print center">Demo only. No payment is taken.</p>
+        </div>
+
+        <div class="after-grid">
+          <div class="after-card">
+            <h3>After checkout</h3>
+            <p>Stripe emails a receipt and brings the customer back to a Laundry Caddie thank-you page. Within 48 hours, the team emails their weekly pickup slot and drops off the first bag.</p>
+          </div>
+          <div class="after-card">
+            <h3>Managing a subscription</h3>
+            <p>A "Manage my subscription" link opens Stripe's customer portal. Subscribers sign in with their email to update their card, switch bag size or cancel at the end of the billing period. Staff can pause billing from the Stripe dashboard.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <p class="footer-brand">Laundry Caddie</p>
+        <p>Laundry made easy. Lives made better.</p>
+      </div>
+      <div>
+        <p>Laundry Caddie is a social enterprise of <a href="https://arcjacksonville.org/">The Arc Jacksonville</a>, creating paid jobs for adults with intellectual and developmental disabilities.</p>
+        <p>&copy; <span id="year">2026</span> The Arc Jacksonville. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>

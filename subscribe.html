@@ -25,7 +25,7 @@
   </header>
 
   <!-- DEMO NOTE: remove this banner once real Stripe Payment Links are connected -->
-  <p class="demo-banner" role="note"><strong>Demo:</strong> payment isn't connected yet. At launch, "Continue to secure checkout" opens Stripe's hosted checkout page.</p>
+  <p class="demo-banner" role="note"><strong>Demo:</strong> payment isn't connected yet. The next page shows a sketch of the Stripe checkout page customers will see at launch.</p>
 
   <main id="main" tabindex="-1">
     <section class="section subscribe" aria-labelledby="sub-title">
@@ -40,7 +40,7 @@
           <li><span>3</span>We schedule your pickup</li>
         </ol>
 
-        <form id="subscribe-form" class="subscribe-form" action="thanks.html" method="get" novalidate>
+        <form id="subscribe-form" class="subscribe-form" action="checkout.html" method="get" novalidate>
           <fieldset class="plan-picker">
             <legend><h2 class="h3">Choose your bag</h2></legend>
 
@@ -98,46 +98,6 @@
       </div>
     </section>
 
-    <!-- Preview of what the Stripe Payment Link will collect. This is a wireframe, not a form. -->
-    <section class="section section-tint" aria-labelledby="checkout-preview-title">
-      <div class="container">
-        <p class="eyebrow center">Mockup</p>
-        <h2 id="checkout-preview-title" class="center">What the secure checkout page will ask for</h2>
-        <p class="section-intro center">At launch, the button above opens a checkout page hosted by Stripe with Laundry Caddie's logo and colors. This sketch shows its layout. It isn't a working form.</p>
-
-        <figure class="wireframe" aria-describedby="wf-caption">
-          <div class="wf-left" aria-hidden="true">
-            <div class="wf-logo">Laundry Caddie logo</div>
-            <p class="wf-plan">Subscribe to <strong>Large Bag</strong></p>
-            <p class="wf-price">$185.00 <span>per month</span></p>
-            <p class="wf-note">Weekly pickup &amp; delivery · 48-hour turnaround</p>
-          </div>
-          <div class="wf-right" aria-hidden="true">
-            <p class="wf-label">Email</p><div class="wf-box"></div>
-            <p class="wf-label">Phone</p><div class="wf-box"></div>
-            <p class="wf-label">Service address</p><div class="wf-box tall"></div>
-            <p class="wf-label">Neighborhood</p><div class="wf-box select">Choose…</div>
-            <p class="wf-label">Preferred pickup day</p><div class="wf-box select">Mon / Tue / Wed</div>
-            <p class="wf-label">How did you hear about us?</p><div class="wf-box select">Choose…</div>
-            <p class="wf-label">Card information</p><div class="wf-box tall card">Card number · MM/YY · CVC</div>
-            <div class="wf-button">Subscribe</div>
-            <p class="wf-fine">Powered by Stripe · Cancel anytime from your customer portal</p>
-          </div>
-          <figcaption id="wf-caption">Wireframe of the Stripe checkout page: an order summary on the left (plan, $185 per month), and on the right the fields Stripe will collect: email, phone, service address, neighborhood, preferred pickup day, how you heard about us, and card details, followed by a Subscribe button.</figcaption>
-        </figure>
-
-        <div class="after-grid">
-          <div class="after-card">
-            <h3>After checkout</h3>
-            <p>Stripe emails a receipt and brings the customer back to a Laundry Caddie thank-you page. Within 48 hours, the team emails their weekly pickup slot and drops off the first bag.</p>
-          </div>
-          <div class="after-card">
-            <h3>Managing a subscription</h3>
-            <p>A "Manage my subscription" link opens Stripe's customer portal. Subscribers sign in with their email to update their card, switch bag size or cancel at the end of the billing period. Staff can pause billing from the Stripe dashboard.</p>
-          </div>
-        </div>
-      </div>
-    </section>
   </main>
 
   <footer class="site-footer">

@@ -75,6 +75,22 @@
     });
   }
 
+  // Checkout mockup page: reflect the chosen plan and carry it forward/back
+  var simulate = document.getElementById("simulate-pay");
+  if (simulate) {
+    var key = PLANS[params.get("plan")] ? params.get("plan") : "large";
+    var plan = PLANS[key];
+    document.querySelector(".wf-plan strong").textContent = plan.name;
+    document.querySelector(".wf-price").firstChild.textContent = plan.price + ".00 ";
+    document.querySelectorAll(".sc-amount").forEach(function (el) { el.textContent = plan.price + ".00"; });
+    document.querySelectorAll(".sc-plan-name").forEach(function (el) { el.textContent = plan.name; });
+    var cap = document.querySelector(".wf-cap-plan");
+    if (cap) cap.textContent = plan.name + ", " + plan.price;
+    simulate.href = "thanks.html?plan=" + key;
+    var back = document.getElementById("back-to-plan");
+    if (back) back.href = "subscribe.html?plan=" + key;
+  }
+
   // Thank-you page: show the plan name
   var thanksPlan = document.getElementById("thanks-plan");
   if (thanksPlan && PLANS[params.get("plan")]) thanksPlan.textContent = PLANS[params.get("plan")].name;
