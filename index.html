@@ -59,8 +59,8 @@
     },
     "makesOffer": [
       {"@type": "Offer", "name": "Pay as You Go", "price": "2.34", "priceCurrency": "USD", "description": "Per pound. Free pickup and delivery on orders of 20 lb or more."},
-      {"@type": "Offer", "name": "Regular Bag subscription", "price": "155", "priceCurrency": "USD", "description": "Per month. Up to 25 lb weekly."},
-      {"@type": "Offer", "name": "Large Bag subscription", "price": "185", "priceCurrency": "USD", "description": "Per month. Up to 40 lb weekly."}
+      {"@type": "Offer", "name": "Regular Bag plan", "price": "155", "priceCurrency": "USD", "description": "Per month. Up to 25 lb weekly."},
+      {"@type": "Offer", "name": "Large Bag plan", "price": "185", "priceCurrency": "USD", "description": "Per month. Up to 40 lb weekly."}
     ]
   }
   </script>
@@ -195,7 +195,7 @@
               <li>Hypoallergenic wash</li>
               <li>Weekly pickup &amp; delivery, 48-hour turnaround</li>
             </ul>
-            <a class="btn btn-block btn-secondary" href="#schedule" data-service="Regular Bag subscription">Choose Regular</a>
+            <a class="btn btn-block btn-secondary" href="#schedule" data-service="Regular Bag plan">Choose Regular</a>
           </article>
 
           <article class="price-card featured" aria-labelledby="plan-large">
@@ -210,7 +210,7 @@
               <li>Hypoallergenic wash</li>
               <li>Weekly pickup &amp; delivery, 48-hour turnaround</li>
             </ul>
-            <a class="btn btn-block" href="#schedule" data-service="Large Bag subscription">Choose Large</a>
+            <a class="btn btn-block" href="#schedule" data-service="Large Bag plan">Choose Large</a>
           </article>
         </div>
         <p class="fine-print center">Yearly averages assume 50 weeks of service. We close two weeks a year, usually Thanksgiving and Christmas weeks, and don't deduct for those closures. Students at UNF, JU, Edward Waters and FSCJ: ask about <a href="https://arcjacksonville.org/laundrycaddie-serviceplan/students/">semester plans</a>.</p>
@@ -399,20 +399,20 @@
           <div class="field">
               <label for="f-area">Neighborhood</label>
               <select id="f-area" name="neighborhood">
-                <option>Downtown / San Marco</option>
-                <option>Miramar / San Jose / Beauclerc</option>
-                <option>Riverside / Avondale / Ortega</option>
+                <option>Downtown, San Marco</option>
+                <option value="Miramar / San Jose / Beauclerc">Miramar area</option>
+                <option value="Riverside / Avondale / Ortega">Riverside area</option>
                 <option>Southside</option>
-                <option>College campus (UNF, JU, EWU, FSCJ)</option>
-                <option>Somewhere else</option>
+                <option value="College campus">College campus</option>
+                <option>Other area</option>
               </select>
           </div>
           <div class="field">
               <label for="f-service">Service</label>
               <select id="f-service" name="service">
                 <option>Pay as You Go</option>
-                <option>Regular Bag subscription</option>
-                <option>Large Bag subscription</option>
+                <option>Regular Bag plan</option>
+                <option>Large Bag plan</option>
                 <option>Commercial quote</option>
               </select>
           </div>
