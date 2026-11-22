@@ -2,7 +2,7 @@
 
 A single-page site for **Laundry Caddie**, the wash-and-fold pickup and delivery service run by [The Arc Jacksonville](https://arcjacksonville.org/). It uses plain HTML, CSS and a little vanilla JavaScript, with no build step and no frameworks.
 
-Live site: https://tomrossi7.github.io/laundry-caddie/
+Live site: https://sarahtroup.github.io/laundry-caddie/
 
 ## Files
 
