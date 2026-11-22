@@ -21,6 +21,12 @@
     nav.addEventListener("click", function (e) {
       if (e.target.closest("a")) closeNav();
     });
+    // Close the menu when keyboard focus leaves the header, so the open
+    // menu never covers the element that now has focus.
+    var header = toggle.closest("header");
+    header.addEventListener("focusout", function (e) {
+      if (nav.classList.contains("open") && !header.contains(e.relatedTarget)) closeNav();
+    });
     document.addEventListener("keydown", function (e) {
       if (e.key === "Escape" && nav.classList.contains("open")) {
         closeNav();

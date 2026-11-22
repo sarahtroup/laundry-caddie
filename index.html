@@ -98,7 +98,7 @@
         <div class="hero-copy">
           <p class="eyebrow">Wash &amp; fold pickup and delivery · Jacksonville, FL</p>
           <h1 id="hero-title">Laundry made easy. <span class="accent-text">Lives made better.</span></h1>
-          <p class="lead">We pick up, wash, fold and deliver your laundry in 48 hours, and every load creates paid jobs for adults with intellectual and developmental disabilities.</p>
+          <p class="lead">We pick up, wash, fold and deliver your laundry in 48 hours. Every load creates paid jobs for adults with disabilities.</p>
           <div class="hero-actions">
             <a class="btn btn-large" href="#schedule">Schedule a Pickup</a>
             <a class="btn btn-large btn-secondary" href="#pricing">See Pricing</a>
@@ -181,7 +181,7 @@
               <li>48-hour turnaround on weekdays</li>
               <li>Any bag works</li>
             </ul>
-            <a class="btn btn-block btn-secondary" href="https://arcjacksonville.org/laundrycaddie-serviceplan/bythepound/">Schedule a pickup</a>
+            <a class="btn btn-block btn-secondary" href="#schedule" data-service="Pay as You Go">Schedule a pickup</a>
           </article>
 
           <article class="price-card" aria-labelledby="plan-regular">
@@ -195,7 +195,7 @@
               <li>Hypoallergenic wash</li>
               <li>Weekly pickup &amp; delivery, 48-hour turnaround</li>
             </ul>
-            <a class="btn btn-block btn-secondary" href="https://arcjacksonville.org/laundrycaddie-serviceplan/">Choose Regular</a>
+            <a class="btn btn-block btn-secondary" href="#schedule" data-service="Regular Bag subscription">Choose Regular</a>
           </article>
 
           <article class="price-card featured" aria-labelledby="plan-large">
@@ -210,7 +210,7 @@
               <li>Hypoallergenic wash</li>
               <li>Weekly pickup &amp; delivery, 48-hour turnaround</li>
             </ul>
-            <a class="btn btn-block" href="https://arcjacksonville.org/laundrycaddie-serviceplan/">Choose Large</a>
+            <a class="btn btn-block" href="#schedule" data-service="Large Bag subscription">Choose Large</a>
           </article>
         </div>
         <p class="fine-print center">Yearly averages assume 50 weeks of service. We close two weeks a year, usually Thanksgiving and Christmas weeks, and don't deduct for those closures. Students at UNF, JU, Edward Waters and FSCJ: ask about <a href="https://arcjacksonville.org/laundrycaddie-serviceplan/students/">semester plans</a>.</p>
@@ -223,7 +223,8 @@
         <div class="mission-grid">
           <div>
             <p class="eyebrow">Our mission</p>
-            <h2 id="mission-title">We're not just doing laundry. We're empowering people, one load at a time.</h2>
+            <h2 id="mission-title">Meaningful work, one load at a time</h2>
+            <p class="pull">We're not just doing laundry. We're empowering people.</p>
             <p>Laundry Caddie is a nonprofit social enterprise of <a href="https://arcjacksonville.org/">The Arc Jacksonville</a>. We create paid, meaningful jobs for adults with intellectual and developmental disabilities (IDD).</p>
             <p>Our team sorts, washes, folds, bags and delivers every order. They build skills, earn a paycheck and work alongside the community they serve. When you choose Laundry Caddie, you get your time back and help someone build a career.</p>
             <!-- TODO: add real impact numbers (jobs created, hours worked, loads washed) once The Arc confirms them -->
@@ -374,7 +375,7 @@
           TODO: set a Formspree (or other) endpoint.
         -->
         <form class="booking-form" id="booking-form" data-endpoint="" data-mailto="laundrycaddie@arcjacksonville.org" novalidate>
-          <h3>Pickup request</h3>
+          <h3>Request a pickup</h3>
           <p class="form-hint">Fields marked <span aria-hidden="true">*</span><span class="visually-hidden">with an asterisk</span> are required.</p>
 
           <div class="field">
@@ -395,8 +396,7 @@
             <label for="f-address">Pickup address <span aria-hidden="true">*</span></label>
             <input id="f-address" name="address" type="text" autocomplete="street-address" required>
           </div>
-          <div class="field-row">
-            <div class="field">
+          <div class="field">
               <label for="f-area">Neighborhood</label>
               <select id="f-area" name="neighborhood">
                 <option>Downtown / San Marco</option>
@@ -406,8 +406,8 @@
                 <option>College campus (UNF, JU, EWU, FSCJ)</option>
                 <option>Somewhere else</option>
               </select>
-            </div>
-            <div class="field">
+          </div>
+          <div class="field">
               <label for="f-service">Service</label>
               <select id="f-service" name="service">
                 <option>Pay as You Go</option>
@@ -415,7 +415,6 @@
                 <option>Large Bag subscription</option>
                 <option>Commercial quote</option>
               </select>
-            </div>
           </div>
           <fieldset class="field">
             <legend>Preferred pickup day</legend>
@@ -429,7 +428,7 @@
             <label for="f-notes">Anything else?</label>
             <textarea id="f-notes" name="notes" rows="3"></textarea>
           </div>
-          <button class="btn btn-large btn-block" type="submit">Send pickup request</button>
+          <button class="btn btn-large btn-block" type="submit">Request a pickup</button>
           <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
         </form>
       </div>
