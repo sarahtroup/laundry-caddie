@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#f2faf9"/>
+  <circle cx="1060" cy="110" r="220" fill="#d5efec"/>
+  <circle cx="1120" cy="560" r="160" fill="#ffe7b8"/>
+  <g transform="translate(90 120) scale(2.2)">
+    <rect width="64" height="64" rx="16" fill="#0a6f6b"/>
+    <rect x="14" y="12" width="36" height="42" rx="6" fill="#fff"/>
+    <rect x="14" y="12" width="36" height="9" rx="4" fill="#ffd27a"/>
+    <circle cx="32" cy="37" r="11" fill="#0a6f6b"/>
+    <path d="M24 38c3-3 5 3 8 0s5 3 8 0" stroke="#fff" stroke-width="2.6" fill="none" stroke-linecap="round"/>
+  </g>
+  <text x="90" y="350" font-family="Verdana, DejaVu Sans, sans-serif" font-size="84" font-weight="700" fill="#10302f">Laundry Caddie</text>
+  <text x="90" y="430" font-family="Verdana, DejaVu Sans, sans-serif" font-size="40" fill="#0a6f6b">Laundry made easy. Lives made better.</text>
+  <text x="90" y="520" font-family="Verdana, DejaVu Sans, sans-serif" font-size="28" fill="#3d5554">Wash &amp; fold pickup and delivery in Jacksonville, FL · The Arc Jacksonville</text>
+</svg>
