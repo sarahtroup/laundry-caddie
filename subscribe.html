@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Subscribe | Laundry Caddie</title>
+  <meta name="description" content="Choose a Laundry Caddie weekly wash and fold subscription: Regular Bag $155/month or Large Bag $185/month, with free weekly pickup and delivery in Jacksonville, FL.">
+  <meta name="theme-color" content="#0a6f6b">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="Laundry Caddie home">
+        <img src="assets/favicon.svg" alt="" width="40" height="40">
+        <span>Laundry Caddie</span>
+      </a>
+      <a class="btn btn-small btn-secondary header-back" href="index.html#pricing" aria-label="Back to pricing"><span aria-hidden="true">←</span> Pricing</a>
+    </div>
+  </header>
+
+  <!-- DEMO NOTE: remove this banner once real Stripe Payment Links are connected -->
+  <p class="demo-banner" role="note"><strong>Demo:</strong> payment isn't connected yet. At launch, "Continue to secure checkout" opens Stripe's hosted checkout page.</p>
+
+  <main id="main" tabindex="-1">
+    <section class="section subscribe" aria-labelledby="sub-title">
+      <div class="container narrow">
+        <p class="eyebrow">Weekly subscription</p>
+        <h1 id="sub-title">Start your weekly laundry service</h1>
+        <p class="lead">Free weekly pickup and delivery, a 48-hour turnaround and no contract. Cancel anytime with 7 days' notice.</p>
+
+        <ol class="progress" aria-label="Sign-up steps">
+          <li class="current" aria-current="step"><span>1</span>Choose your bag</li>
+          <li><span>2</span>Details &amp; payment</li>
+          <li><span>3</span>We schedule your pickup</li>
+        </ol>
+
+        <form id="subscribe-form" class="subscribe-form" action="thanks.html" method="get" novalidate>
+          <fieldset class="plan-picker">
+            <legend><h2 class="h3">Choose your bag</h2></legend>
+
+            <label class="plan-option">
+              <input type="radio" name="plan" value="regular">
+              <span class="plan-body">
+                <span class="plan-name">Regular Bag</span>
+                <span class="plan-who">Individual or couple · up to 25 lb a week</span>
+                <span class="plan-price"><strong>$155</strong>/month</span>
+                <span class="plan-avg">Averages $1.44/lb over a year</span>
+              </span>
+            </label>
+
+            <label class="plan-option">
+              <input type="radio" name="plan" value="large" checked>
+              <span class="plan-body">
+                <span class="badge-inline">Best Value</span>
+                <span class="plan-name">Large Bag</span>
+                <span class="plan-who">Families · up to 40 lb a week</span>
+                <span class="plan-price"><strong>$185</strong>/month</span>
+                <span class="plan-avg">Averages $1.11/lb over a year</span>
+              </span>
+            </label>
+          </fieldset>
+
+          <div class="care">
+            <h2 class="h3">How we care for your laundry</h2>
+            <ul>
+              <li>We wash clothes, sheets and towels with fragrance-free, hypoallergenic detergent.</li>
+              <li>We add a color-catcher sheet and detergent booster to every load.</li>
+              <li>Everything is washed and dried the same way, on medium heat, so please keep delicates and special-care items at home.</li>
+              <li>Pre-treat stubborn stains and empty pockets before pickup. Have a favorite detergent? Send it along.</li>
+              <li>Send hangers if you'd like some garments returned on hangers.</li>
+              <li>Please don't send items affected by the "Three P's": pee, poop or puke.</li>
+              <li>We close two weeks a year, Thanksgiving and Christmas weeks. Your monthly price already accounts for this.</li>
+            </ul>
+            <div class="check-field">
+              <input id="care-ok" type="checkbox" name="care" value="yes" required>
+              <label for="care-ok">I've read and understand how Laundry Caddie cares for my laundry.</label>
+            </div>
+          </div>
+
+          <div class="summary" aria-live="polite">
+            <p class="summary-line"><span id="sum-plan">Large Bag</span> · weekly pickup &amp; delivery</p>
+            <p class="summary-total"><strong id="sum-price">$185</strong> per month</p>
+          </div>
+
+          <p class="form-status" id="sub-status" role="status" aria-live="polite"></p>
+          <button class="btn btn-large btn-block" type="submit">
+            <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24"><rect x="5" y="10" width="14" height="10" rx="2" fill="none" stroke="currentColor" stroke-width="2.2"/><path d="M8 10V7a4 4 0 018 0v3" fill="none" stroke="currentColor" stroke-width="2.2"/></svg>
+            Continue to secure checkout
+          </button>
+          <p class="fine-print center">Payments are processed securely by Stripe. Laundry Caddie never sees your full card number.</p>
+        </form>
+      </div>
+    </section>
+
+    <!-- Preview of what the Stripe Payment Link will collect. This is a wireframe, not a form. -->
+    <section class="section section-tint" aria-labelledby="checkout-preview-title">
+      <div class="container">
+        <p class="eyebrow center">Mockup</p>
+        <h2 id="checkout-preview-title" class="center">What the secure checkout page will ask for</h2>
+        <p class="section-intro center">At launch, the button above opens a checkout page hosted by Stripe with Laundry Caddie's logo and colors. This sketch shows its layout. It isn't a working form.</p>
+
+        <figure class="wireframe" aria-describedby="wf-caption">
+          <div class="wf-left" aria-hidden="true">
+            <div class="wf-logo">Laundry Caddie logo</div>
+            <p class="wf-plan">Subscribe to <strong>Large Bag</strong></p>
+            <p class="wf-price">$185.00 <span>per month</span></p>
+            <p class="wf-note">Weekly pickup &amp; delivery · 48-hour turnaround</p>
+          </div>
+          <div class="wf-right" aria-hidden="true">
+            <p class="wf-label">Email</p><div class="wf-box"></div>
+            <p class="wf-label">Phone</p><div class="wf-box"></div>
+            <p class="wf-label">Service address</p><div class="wf-box tall"></div>
+            <p class="wf-label">Neighborhood</p><div class="wf-box select">Choose…</div>
+            <p class="wf-label">Preferred pickup day</p><div class="wf-box select">Mon / Tue / Wed</div>
+            <p class="wf-label">How did you hear about us?</p><div class="wf-box select">Choose…</div>
+            <p class="wf-label">Card information</p><div class="wf-box tall card">Card number · MM/YY · CVC</div>
+            <div class="wf-button">Subscribe</div>
+            <p class="wf-fine">Powered by Stripe · Cancel anytime from your customer portal</p>
+          </div>
+          <figcaption id="wf-caption">Wireframe of the Stripe checkout page: an order summary on the left (plan, $185 per month), and on the right the fields Stripe will collect: email, phone, service address, neighborhood, preferred pickup day, how you heard about us, and card details, followed by a Subscribe button.</figcaption>
+        </figure>
+
+        <div class="after-grid">
+          <div class="after-card">
+            <h3>After checkout</h3>
+            <p>Stripe emails a receipt and brings the customer back to a Laundry Caddie thank-you page. Within 48 hours, the team emails their weekly pickup slot and drops off the first bag.</p>
+          </div>
+          <div class="after-card">
+            <h3>Managing a subscription</h3>
+            <p>A "Manage my subscription" link opens Stripe's customer portal. Subscribers sign in with their email to update their card, switch bag size or cancel at the end of the billing period. Staff can pause billing from the Stripe dashboard.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <p class="footer-brand">Laundry Caddie</p>
+        <p>Laundry made easy. Lives made better.</p>
+      </div>
+      <div>
+        <p>Laundry Caddie is a social enterprise of <a href="https://arcjacksonville.org/">The Arc Jacksonville</a>, creating paid jobs for adults with intellectual and developmental disabilities.</p>
+        <p>&copy; <span id="year">2026</span> The Arc Jacksonville. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>

@@ -35,6 +35,50 @@
     });
   }
 
+  // Subscribe page: plan picker, summary and care-standards check
+  var PLANS = { regular: { name: "Regular Bag", price: "$155" }, large: { name: "Large Bag", price: "$185" } };
+  var params = new URLSearchParams(window.location.search);
+  var subForm = document.getElementById("subscribe-form");
+  if (subForm) {
+    var wanted = params.get("plan");
+    if (PLANS[wanted]) subForm.querySelector('input[value="' + wanted + '"]').checked = true;
+    var sumPlan = document.getElementById("sum-plan");
+    var sumPrice = document.getElementById("sum-price");
+    var wfPlan = document.querySelector(".wf-plan strong");
+    var wfPrice = document.querySelector(".wf-price");
+    var syncPlan = function () {
+      var p = PLANS[subForm.querySelector('input[name="plan"]:checked').value];
+      sumPlan.textContent = p.name;
+      sumPrice.textContent = p.price;
+      if (wfPlan) wfPlan.textContent = p.name;
+      if (wfPrice) wfPrice.firstChild.textContent = p.price + ".00 ";
+    };
+    subForm.addEventListener("change", syncPlan);
+    syncPlan();
+
+    var care = document.getElementById("care-ok");
+    var subStatus = document.getElementById("sub-status");
+    subForm.addEventListener("submit", function (e) {
+      if (!care.checked) {
+        e.preventDefault();
+        care.setAttribute("aria-invalid", "true");
+        subStatus.className = "form-status err";
+        subStatus.textContent = "Please confirm you've read how we care for your laundry.";
+        care.focus();
+      }
+      // TODO (launch): instead of submitting to thanks.html, send the visitor to the
+      // Stripe Payment Link for the chosen plan, e.g.
+      // window.location.href = STRIPE_LINKS[plan];
+    });
+    care.addEventListener("change", function () {
+      if (care.checked) { care.removeAttribute("aria-invalid"); subStatus.textContent = ""; }
+    });
+  }
+
+  // Thank-you page: show the plan name
+  var thanksPlan = document.getElementById("thanks-plan");
+  if (thanksPlan && PLANS[params.get("plan")]) thanksPlan.textContent = PLANS[params.get("plan")].name;
+
   // Buttons with data-service preselect the form's service dropdown
   var serviceSelect = document.getElementById("f-service");
   document.querySelectorAll("[data-service]").forEach(function (link) {
