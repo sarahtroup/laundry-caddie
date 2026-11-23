@@ -461,6 +461,7 @@ input[aria-invalid="true"] { border-color: #b42318; }
   border: 1px solid var(--line);
   border-radius: var(--radius-sm);
 }
+.review-stars { color: #a55116; font-size: 1.22rem; letter-spacing: .12em; line-height: 1; }
 .review-card blockquote { margin: 0; }
 .review-card figcaption { font-weight: 750; color: var(--primary-dark); }
 .gift-panel img {
