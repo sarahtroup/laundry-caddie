@@ -83,7 +83,7 @@
           <li><a href="#gift-cards">Gift cards</a></li>
           <li><a href="#business">For businesses</a></li>
           <li><a href="#faq">FAQ</a></li>
-          <li><a class="btn btn-small" href="#schedule">Schedule a Pickup</a></li>
+          <li><a class="btn btn-small" href="pickup.html">Schedule a Pickup</a></li>
         </ul>
       </nav>
     </div>
@@ -98,7 +98,7 @@
           <h1 id="hero-title">Laundry made easy. <span class="accent-text">Lives made better.</span></h1>
           <p class="lead">We pick up, wash, fold and deliver your laundry in about 48 hours.</p>
           <div class="hero-actions">
-            <a class="btn btn-large" href="#schedule">Schedule a Pickup</a>
+            <a class="btn btn-large" href="pickup.html">Schedule a Pickup</a>
             <a class="btn btn-large btn-secondary" href="#pricing">See Pricing</a>
           </div>
           <ul class="hero-points">
@@ -156,7 +156,7 @@
               <li>48-hour turnaround on weekdays</li>
               <li>Any bag works</li>
             </ul>
-            <a class="btn btn-block btn-secondary" href="#schedule" data-service="Pay as You Go">Schedule a pickup</a>
+            <a class="btn btn-block btn-secondary" href="pickup.html">Schedule a pickup</a>
           </article>
 
           <article class="price-card" aria-labelledby="plan-regular">
@@ -280,7 +280,7 @@
           </li>
         </ul>
         <!-- TODO: add commercial pricing or volume terms if The Arc wants them public -->
-        <p class="center"><a class="btn btn-large" href="#schedule" data-service="Commercial quote">Request a commercial quote</a></p>
+        <p class="center"><a class="btn btn-large" href="pickup.html">Request a commercial quote</a></p>
       </div>
     </section>
 
@@ -343,7 +343,7 @@
         <div class="contact-info">
           <p class="eyebrow">Schedule a pickup</p>
           <h2 id="schedule-title">Let's get your laundry off your plate</h2>
-          <p>Send us a request and we'll reply with a pickup time for your neighborhood. Prefer to sign up directly? Use our <a href="https://arcjacksonville.org/laundrycaddie-serviceplan/">subscription sign-up</a> or <a href="https://arcjacksonville.org/laundrycaddie-serviceplan/bythepound/">pay-as-you-go pickup form</a>.</p>
+          <p>Send us a request and we’ll email you to confirm your pickup time.</p>
           <ul class="contact-list">
             <li>
               <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M6.6 10.8a15.5 15.5 0 006.6 6.6l2.2-2.2a1 1 0 011-.25 11.4 11.4 0 003.6.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.45.57 3.57a1 1 0 01-.25 1z" fill="currentColor"/></svg>
@@ -364,70 +364,11 @@
           </ul>
         </div>
 
-        <!--
-          Booking form. With no endpoint set, script.js opens the visitor's email app
-          with the details filled in. To use Formspree, set data-endpoint to your form URL,
-          e.g. data-endpoint="https://formspree.io/f/abcdwxyz". See README.
-          TODO: set a Formspree (or other) endpoint.
-        -->
-        <form class="booking-form" id="booking-form" data-endpoint="" data-mailto="laundrycaddie@arcjacksonville.org" novalidate>
-          <h3>Request a pickup</h3>
-          <p class="form-hint">Fields marked <span aria-hidden="true">*</span><span class="visually-hidden">with an asterisk</span> are required.</p>
-
-          <div class="field">
-            <label for="f-name">Name <span aria-hidden="true">*</span></label>
-            <input id="f-name" name="name" type="text" autocomplete="name" required>
-          </div>
-          <div class="field-row">
-            <div class="field">
-              <label for="f-email">Email <span aria-hidden="true">*</span></label>
-              <input id="f-email" name="email" type="email" autocomplete="email" required>
-            </div>
-            <div class="field">
-              <label for="f-phone">Phone</label>
-              <input id="f-phone" name="phone" type="tel" autocomplete="tel">
-            </div>
-          </div>
-          <div class="field">
-            <label for="f-address">Pickup address <span aria-hidden="true">*</span></label>
-            <input id="f-address" name="address" type="text" autocomplete="street-address" required>
-          </div>
-          <div class="field">
-              <label for="f-area">Neighborhood</label>
-              <select id="f-area" name="neighborhood">
-                <option>Downtown, San Marco</option>
-                <option value="Miramar / San Jose / Beauclerc">Miramar area</option>
-                <option value="Riverside / Avondale / Ortega">Riverside area</option>
-                <option>Southside</option>
-                <option value="College campus">College campus</option>
-                <option>Other area</option>
-              </select>
-          </div>
-          <div class="field">
-              <label for="f-service">Service</label>
-              <select id="f-service" name="service">
-                <option>Pay as You Go</option>
-                <option>Regular Bag plan</option>
-                <option>Large Bag plan</option>
-                <option>Commercial quote</option>
-              </select>
-          </div>
-          <fieldset class="field">
-            <legend>Preferred pickup day</legend>
-            <div class="radio-row">
-              <label><input type="radio" name="day" value="Monday" checked> Monday</label>
-              <label><input type="radio" name="day" value="Tuesday"> Tuesday</label>
-              <label><input type="radio" name="day" value="Wednesday"> Wednesday</label>
-              <label><input id="pickup-thursday" type="radio" name="day" value="Thursday" disabled> Thursday (laundry by the pound only)</label>
-            </div>
-          </fieldset>
-          <div class="field">
-            <label for="f-notes">Anything else?</label>
-            <textarea id="f-notes" name="notes" rows="3"></textarea>
-          </div>
-          <button class="btn btn-large btn-block" type="submit">Request a pickup</button>
-          <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
-        </form>
+        <div class="booking-form">
+          <h3>Laundry by the pound</h3>
+          <p>Request pickup for your home or business.</p>
+          <a class="btn btn-large" href="pickup.html">Request laundry pickup</a>
+        </div>
       </div>
     </section>
   </main>
