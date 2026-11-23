@@ -16,8 +16,29 @@ The [care standards draft](care-standards-draft.html) is for review. After appro
 
 ## Microsoft Forms, SharePoint and invoices
 
-- Create a test form owned by a restricted Laundry Caddie Microsoft 365 group. Enable **Anyone can respond** if The Arc permits external responses. Collect name, email, phone, pickup address, preferred pickup day and optional notes. Offer Monday through Thursday for by-the-pound pickup only.
-- Use separate sections for residential and occasional commercial requests. For commercial requests, collect business name, linen type, estimated monthly weight and whether service is ongoing. Route more than 100 lb per month or ongoing service to a quote. Require affirmative agreement to the applicable care standards section and record the archived version in the answer. Use a new versioned form when the standards change.
+- In the Arc-owned test form, put **Are you a commercial customer?** first. Branch **No** directly to Residential pickup. Branch **Yes** to Commercial eligibility. Keep any test-only instruction in the form description.
+- In Commercial eligibility, ask **Is this for ongoing service or more than 100 lb per month?** Route **Yes** to a quote section with `laundrycaddie@arcjacksonville.org` and end that path without a pickup request. Route **No** to Occasional commercial pickup. Collect business name, linen type and estimated monthly weight only there. Each pickup section ends at Submit so it cannot fall through to another service's questions.
+- In each pickup section, require separate **First name**, **Last name**, **Email**, **Phone number**, **Street address**, **City**, **State**, and **ZIP code** questions. Apartment or unit and pickup instructions are optional. Microsoft Forms uses text boxes for these fields, including phone and address. Keep phone and ZIP as text so punctuation and leading zeros are preserved.
+- Show **Thursday (laundry by the pound only)** as the pickup day and use a required single-choice field to confirm it. Display the full applicable care standards in the section subtitle or agreement question subtitle immediately before a required **I have read and agree** choice. Label the agreement with the archived version. The Word starter import cannot configure this branching or required settings.
+
+### Text to display before residential agreement
+
+We wash clothes, sheets, and towels with fragrance-free, hypoallergenic detergent. We add a color-catcher sheet and detergent booster to every load. We use the same wash and dry process for all items and dry on medium heat. Please keep delicates and specialty-care items at home.
+
+Before pickup, empty pockets and pre-treat stubborn stains if needed. Send your preferred detergent if you’d like us to use it, and include hangers for any garments you’d like returned hanging. Please keep out items soiled with any of the “Three P’s” (pee, poop, or puke).
+
+We’ll email you to confirm your pickup time. Thursday pickup is available for by-the-pound service. We weigh your laundry after pickup and send a Stripe invoice based on the measured weight.
+
+### Text to display before occasional commercial agreement
+
+We wash commercial linens in commercial washers and dryers using gentle-on-skin, professional-grade detergent, sanitizer, and oxygen bleach. We can customize products to your needs.
+
+Occasional commercial orders are $2/lb. Use the by-the-pound form to request a pickup. For more than 100 lb in a month or for ongoing service, request a quote so we can confirm volume, pickup needs, and pricing.
+
+We’ll email you to confirm your pickup time. Thursday pickup is available for by-the-pound service. We weigh your laundry after pickup and send a Stripe invoice based on the measured weight.
+
+### Tracking and testing
+
 - Enable print/download after submission. Open the linked Excel workbook from the group form and verify staff-only permissions in SharePoint. Track pickup date, weight, Stripe invoice ID and payment status in a separate staff tracker keyed by response ID.
 - Microsoft’s built-in receipt email is available to internal respondents. Use Power Automate’s Forms submission trigger, Get response details and an Outlook send action to send outside customers a printable copy with their answers, the exact applicable care standards text and version, and the submission date. Use a designated test inbox and sample data. Staff send the pickup confirmation after scheduling.
 - Copy the iframe source from **Collect responses → Embed** into `microsoftFormsEmbedUrl` in `signup-test.js`. Test the embed and fallback link signed out, required agreement, print/download, external receipt delivery, and the linked workbook row. Check that an outside user cannot access the workbook.
