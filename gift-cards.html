@@ -35,6 +35,7 @@
       <h1>Buy a Laundry Caddie gift card</h1>
       <p>Choose an amount or enter your own. Recipients can use their gift card toward a Weekly Laundry Plan or pay-as-you-go wash &amp; fold.</p>
       <div class="gift-up-target" data-site-id="49d12ee0-c10f-463c-a006-e7ac661eab04" data-platform="Other"></div>
+      <p id="gift-help" hidden>Gift card checkout isn’t displaying. For help buying a gift card, email <a href="mailto:laundrycaddie@arcjacksonville.org">laundrycaddie@arcjacksonville.org</a>.</p>
       <noscript><p>Enable JavaScript to open gift card checkout.</p></noscript>
     </div>
   </main>
@@ -52,6 +53,18 @@
   </footer>
   <script src="script.js?v=thursday-pickup" defer></script>
   <script>
+    (function () {
+      var target = document.querySelector(".gift-up-target");
+      var help = document.getElementById("gift-help");
+      var timeout = window.setTimeout(function () { help.hidden = Boolean(target.querySelector("iframe")); }, 6000);
+      var observer = new MutationObserver(function () {
+        if (!target.querySelector("iframe")) return;
+        window.clearTimeout(timeout);
+        help.hidden = true;
+        observer.disconnect();
+      });
+      observer.observe(target, { childList: true, subtree: true });
+    })();
     (function (g, i, f, t, u, p, s) {
       g[u] = g[u] || function () { (g[u].q = g[u].q || []).push(arguments); };
       p = i.createElement(f);
