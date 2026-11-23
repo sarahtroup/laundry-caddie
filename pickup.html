@@ -8,11 +8,17 @@
   <title>Request a Pickup | Laundry Caddie</title>
   <link rel="stylesheet" href="styles.css?v=laundry-caddie-photos">
   <style>
-    .pickup-page { padding-block: clamp(1.75rem, 5vw, 3rem); }
-    .pickup-content { max-width: 52rem; margin-inline: auto; }
-    .pickup-content h1 { margin-bottom: .6rem; }
-    .pickup-form { display: block; width: 100%; height: 52rem; border: 1px solid var(--line); border-radius: var(--radius); background: var(--tint); }
-    @media (max-width: 600px) { .pickup-form { height: 54rem; } }
+    .pickup-page { padding-block: clamp(1.5rem, 5vw, 3rem); }
+    .pickup-content { max-width: 44rem; margin-inline: auto; }
+    .pickup-content h1 { font-size: clamp(2rem, 5vw, 3rem); margin-bottom: .4rem; }
+    .pickup-content h2 { font-size: 1.35rem; }
+    .pickup-card { background: white; border: 1px solid var(--line); border-radius: var(--radius); padding: clamp(1rem, 4vw, 2rem); }
+    .pickup-row { display: grid; gap: .8rem; }
+    @media (min-width: 620px) { .pickup-row { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+    .pickup-actions { display: flex; flex-wrap: wrap; gap: .75rem; align-items: center; margin-top: 1.2rem; }
+    .pickup-consent { display: flex; gap: .55rem; align-items: baseline; margin-top: 1rem; }
+    .pickup-confirmation { border-top: 4px solid #005e85; }
+    .pickup-demo { background: var(--tint); border-radius: var(--radius); padding: .75rem 1rem; }
   </style>
 </head>
 <body>
@@ -43,9 +49,54 @@
     <div class="container">
       <div class="pickup-content">
         <h1>Request a laundry pickup</h1>
-        <p>Tell us what you need washed and when. We’ll email you to confirm your pickup time.</p>
-        <p><a href="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=kU0cOMrbAkasBdUZeNcOgHcLdQAlCHpGpGMbhHqOC01UOElTOTJSUzM5WVFFNllNS1Y5Q0ZESzFITC4u">Open the pickup form directly</a></p>
-        <iframe class="pickup-form" title="Laundry Caddie pickup inquiry" src="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=kU0cOMrbAkasBdUZeNcOgHcLdQAlCHpGpGMbhHqOC01UOElTOTJSUzM5WVFFNllNS1Y5Q0ZESzFITC4u&amp;embed=true"></iframe>
+        <p>See what you’ll be able to include in a pickup request.</p>
+        <p class="pickup-demo">Online requests are coming soon. You can try this form with sample details. Nothing is sent or saved.</p>
+        <form id="pickup-preview" class="pickup-card" autocomplete="off">
+          <section id="pickup-details" aria-labelledby="pickup-details-title">
+            <p class="eyebrow">Step 1 of 2</p>
+            <h2 id="pickup-details-title" tabindex="-1">Contact and pickup details</h2>
+            <div class="pickup-row">
+              <label class="field">First name<input name="first" type="text"  required></label>
+              <label class="field">Last name<input name="last" type="text"  required></label>
+              <label class="field">Email address<input name="email" type="email"  required></label>
+              <label class="field">Phone number<input name="phone" type="tel"  required></label>
+            </div>
+            <label class="field">Pickup address (street, city, state)<input name="address" type="text"  required></label>
+            <div class="pickup-row">
+              <label class="field">ZIP code<input name="zip" type="text" inputmode="numeric" pattern="[0-9]{5}" maxlength="5" title="Enter a five-digit ZIP code" required></label>
+              <label class="field">Area of town<select name="area" required><option value="">Select an option</option><option>Downtown, San Marco</option><option>Miramar area</option><option>Riverside area</option><option>Southside</option><option>College campus</option><option>Other area</option></select></label>
+              <label class="field">Preferred pickup day (optional)<select name="day" ><option value="">Select an option</option><option>Monday</option><option>Tuesday</option><option>Wednesday</option><option>Thursday</option><option>Friday (occasional availability)</option></select></label>
+              <label class="field">Is this a home or business?<select name="type" required><option value="">Select an option</option><option>Home</option><option>Business</option></select></label>
+            </div>
+            <label class="field">Pickup instructions (optional)<textarea name="instructions" rows="2"></textarea></label>
+            <div class="pickup-actions"><button class="btn" type="button" id="pickup-next">Continue</button></div>
+          </section>
+          <section id="pickup-service" aria-labelledby="pickup-service-title" hidden>
+            <p class="eyebrow">Step 2 of 2</p>
+            <h2 id="pickup-service-title" tabindex="-1">Service details and care standards</h2>
+            <div id="pickup-home" hidden>
+              <p>We wash clothes, sheets, and towels with fragrance-free, hypoallergenic detergent, a color-catcher sheet, and detergent booster. We dry on medium heat. Please keep delicates and specialty-care items at home.</p>
+              <p>Empty pockets and pre-treat stubborn stains. Send your preferred detergent or hangers if needed. Leave out anything soiled with pee, poop, or puke.</p>
+            </div>
+            <div id="pickup-business" hidden>
+              <label class="field">Business name<input name="business" type="text"  required></label>
+              <label class="field">How often do you need service?<select name="frequency" required><option value="">Select an option</option><option>Occasional pickup</option><option>Request a quote for a large order or ongoing service</option></select></label>
+              <label class="field">What do you need washed? (optional)<textarea name="linens" rows="2" placeholder="For example, towels, sheets, or table linens"></textarea></label>
+              <p>We wash towels and linens for fitness studios, salons, cafés, and short-term rentals. Café linens must be free of grease and cooking oil. We don’t accept restaurant laundry.</p>
+              <p>We use professional-grade detergent, nonbleach sanitizer, and oxygen bleach. Tell us if you need different products. Occasional commercial orders are $2 per pound up to 100 pounds per month. Request a quote for larger or ongoing orders.</p>
+            </div>
+            <label class="pickup-consent"><input type="checkbox" name="agreement" required> I have read and agree to the care standards.</label>
+            <div class="pickup-actions">
+              <button class="btn btn-secondary" type="button" id="pickup-back">Back</button>
+              <button class="btn" type="submit" disabled>Preview confirmation</button>
+            </div>
+          </section>
+        </form>
+        <section id="pickup-confirmation" class="pickup-card pickup-confirmation" aria-labelledby="pickup-confirmation-title" hidden>
+          <h2 id="pickup-confirmation-title" tabindex="-1">Pickup request preview complete</h2>
+          <p class="pickup-demo">No request was sent or saved.</p>
+          <div class="pickup-actions"><button class="btn btn-secondary" type="button" id="pickup-restart">Try another request</button></div>
+        </section>
       </div>
     </div>
   </main>
@@ -64,5 +115,50 @@
   </footer>
 
   <script src="script.js?v=thursday-pickup" defer></script>
+  <script>
+    const form = document.getElementById("pickup-preview");
+    const details = document.getElementById("pickup-details");
+    const service = document.getElementById("pickup-service");
+    const home = document.getElementById("pickup-home");
+    const business = document.getElementById("pickup-business");
+    const confirmation = document.getElementById("pickup-confirmation");
+    function setStep(showService) {
+      const commercial = form.elements.namedItem("type").value === "Business";
+      details.hidden = showService;
+      service.hidden = !showService;
+      home.hidden = commercial;
+      business.hidden = !commercial;
+      for (const field of details.querySelectorAll("input, select, textarea")) field.disabled = showService;
+      for (const field of business.querySelectorAll("input, select, textarea")) field.disabled = !showService || !commercial;
+      form.elements.agreement.disabled = !showService;
+      document.getElementById(showService ? "pickup-service-title" : "pickup-details-title").focus();
+    }
+    function continueToService() {
+      if (!form.reportValidity()) return;
+      form.elements.agreement.checked = false;
+      setStep(true);
+    }
+    form.elements.agreement.disabled = true;
+    for (const field of business.querySelectorAll("input, select, textarea")) field.disabled = true;
+    document.getElementById("pickup-next").addEventListener("click", continueToService);
+    document.getElementById("pickup-back").addEventListener("click", () => setStep(false));
+    form.querySelector('button[type="submit"]').disabled = false;
+    form.addEventListener("submit", (event) => {
+      event.preventDefault();
+      if (!details.hidden) {
+        continueToService();
+        return;
+      }
+      form.hidden = true;
+      confirmation.hidden = false;
+      document.getElementById("pickup-confirmation-title").focus();
+    });
+    document.getElementById("pickup-restart").addEventListener("click", () => {
+      form.reset();
+      confirmation.hidden = true;
+      form.hidden = false;
+      setStep(false);
+    });
+  </script>
 </body>
 </html>
