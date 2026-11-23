@@ -16,10 +16,10 @@ The [care standards draft](care-standards-draft.html) is for review. After appro
 
 ## Microsoft Forms, SharePoint and invoices
 
-- In the Arc-owned test form, put **Are you a commercial customer?** first. Branch **No** directly to Residential pickup. Branch **Yes** to Commercial eligibility. Keep any test-only instruction in the form description.
-- In Commercial eligibility, ask **Is this for ongoing service or more than 100 lb per month?** Route **Yes** to a quote section with `laundrycaddie@arcjacksonville.org` and end that path without a pickup request. Route **No** to Occasional commercial pickup. Collect business name, linen type and estimated monthly weight only there. Each pickup section ends at Submit so it cannot fall through to another service's questions.
-- In each pickup section, require separate **First name**, **Last name**, **Email**, **Phone number**, **Street address**, **City**, **State**, and **ZIP code** questions. Apartment or unit and pickup instructions are optional. Microsoft Forms uses text boxes for these fields, including phone and address. Keep phone and ZIP as text so punctuation and leading zeros are preserved.
-- Show **Thursday (laundry by the pound only)** as the pickup day and use a required single-choice field to confirm it. Display the full applicable care standards in the section subtitle or agreement question subtitle immediately before a required **I have read and agree** choice. Label the agreement with the archived version. The Word starter import cannot configure this branching or required settings.
+- Start with one shared Thursday pickup section for contact details. State the pickup day at the top. Collect separate First name, Last name, Email, Phone number, Street address, City, State and ZIP fields. Apartment or unit and pickup instructions are optional.
+- Ask **Is this pickup for your home or a business?** at the end of pickup details. List **Home** first and branch it directly to the residential care standards and Submit. Branch **Business** to the commercial eligibility question.
+- Ask businesses whether service is ongoing or exceeds 100 lb per month. If yes, show the quote email and explain how to request a quote. Classify any submission on that path as a quote inquiry and exclude it from pickup scheduling and acceptance receipts. If no, ask for business name, linen type and estimated monthly weight, then show commercial care standards and end at Submit.
+- Display the full applicable standards before a required **I have read and agree** choice that identifies the archived version. The earlier Word import predates this layout. Configure and test the routing in Microsoft Forms.
 
 ### Text to display before residential agreement
 
