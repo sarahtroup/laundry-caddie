@@ -17,6 +17,7 @@
     @media (min-width: 620px) { .pickup-row { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
     .pickup-actions { display: flex; flex-wrap: wrap; gap: .75rem; align-items: center; margin-top: 1.2rem; }
     .pickup-consent { display: flex; gap: .55rem; align-items: baseline; margin-top: 1rem; }
+    .pickup-confirmation { border-top: 4px solid #005e85; }
     .pickup-demo { background: var(--tint); border-radius: var(--radius); padding: .75rem 1rem; }
   </style>
 </head>
@@ -38,7 +39,7 @@
           <li><a href="./#gift-cards">Gift cards</a></li>
           <li><a href="./#business">For businesses</a></li>
           <li><a href="./#faq">FAQ</a></li>
-          <li><a class="btn btn-small" href="pickup.html" aria-current="page">Schedule a Pickup</a></li>
+          <li><a class="btn btn-small" href="pickup-preview.html" aria-current="page">Schedule a Pickup</a></li>
         </ul>
       </nav>
     </div>
@@ -49,7 +50,7 @@
       <div class="pickup-content">
         <h1>Request a laundry pickup</h1>
         <p>Tell us what you need washed. We’ll email you to confirm your pickup time.</p>
-        <p class="pickup-demo">Preview only. Use sample details. This page doesn’t send or save inquiries.</p>
+        <p class="pickup-demo">Preview only. Use sample details. Nothing is sent or saved.</p>
         <form id="pickup-preview" class="pickup-card" autocomplete="off">
           <section id="pickup-details" aria-labelledby="pickup-details-title">
             <p class="eyebrow">Step 1 of 2</p>
@@ -87,11 +88,16 @@
             <label class="pickup-consent"><input type="checkbox" name="agreement" required> I have read and agree to the care standards.</label>
             <div class="pickup-actions">
               <button class="btn btn-secondary" type="button" id="pickup-back">Back</button>
-              <button class="btn" type="submit">Test request</button>
+              <button class="btn" type="submit">Send pickup request</button>
             </div>
-            <p role="status" id="pickup-status"></p>
           </section>
         </form>
+        <section id="pickup-confirmation" class="pickup-card pickup-confirmation" aria-labelledby="pickup-confirmation-title" hidden>
+          <h2 id="pickup-confirmation-title" tabindex="-1">We received your pickup request</h2>
+          <p>We’ll email you to confirm your pickup time.</p>
+          <p class="pickup-demo">Sample confirmation. This preview didn’t send or save a request or email.</p>
+          <div class="pickup-actions"><button class="btn btn-secondary" type="button" id="pickup-restart">Try another request</button></div>
+        </section>
       </div>
     </div>
   </main>
@@ -116,7 +122,7 @@
     const service = document.getElementById("pickup-service");
     const home = document.getElementById("pickup-home");
     const business = document.getElementById("pickup-business");
-    const status = document.getElementById("pickup-status");
+    const confirmation = document.getElementById("pickup-confirmation");
     function setStep(showService) {
       const commercial = form.elements.namedItem("type").value === "Business";
       details.hidden = showService;
@@ -126,7 +132,6 @@
       for (const field of details.querySelectorAll("input, select, textarea")) field.disabled = showService;
       for (const field of business.querySelectorAll("input, select, textarea")) field.disabled = !showService || !commercial;
       form.elements.agreement.disabled = !showService;
-      status.textContent = "";
       document.getElementById(showService ? "pickup-service-title" : "pickup-details-title").focus();
     }
     function continueToService() {
@@ -144,7 +149,15 @@
         continueToService();
         return;
       }
-      status.textContent = "The form passed validation. No inquiry was sent.";
+      form.hidden = true;
+      confirmation.hidden = false;
+      document.getElementById("pickup-confirmation-title").focus();
+    });
+    document.getElementById("pickup-restart").addEventListener("click", () => {
+      form.reset();
+      confirmation.hidden = true;
+      form.hidden = false;
+      setStep(false);
     });
   </script>
 </body>
