@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Service signup test | Laundry Caddie</title>
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#005e85">
+  <link rel="icon" href="assets/laundry-caddie-icon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="assets/laundry-caddie-icon-180.png">
+  <link rel="stylesheet" href="styles.css?v=laundry-caddie-branding">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="Laundry Caddie home">
+        <img src="assets/laundry-caddie-logo.webp" alt="" width="480" height="145">
+      </a>
+      <a class="btn btn-small btn-secondary header-back" href="index.html#pricing" aria-label="Back to pricing"><span aria-hidden="true">←</span> Pricing</a>
+    </div>
+  </header>
+
+  <p class="demo-banner" role="note"><strong>Test preview.</strong> Use sample contact details and a Stripe test card.</p>
+
+  <main id="main" tabindex="-1">
+    <section class="section" aria-labelledby="signup-title">
+      <div class="container">
+        <h1 id="signup-title" class="center">Choose your laundry service</h1>
+        <p class="section-intro center">Weekly subscriptions are picked up Monday through Wednesday, based on availability. Thursday pickup is available for laundry by the pound.</p>
+        <p id="stripe-status" class="center">Test checkout links are pending.</p>
+        <div class="pricing-grid">
+          <article class="price-card" aria-labelledby="plan-payg">
+            <h3 id="plan-payg">Laundry by the Pound</h3>
+            <p class="plan-for">Residential &amp; commercial</p>
+            <p class="price"><span class="amount">$2.34</span><span class="per">/lb</span></p>
+            <p class="price-note">Special: <strong>$2.00/lb</strong></p>
+            <ul class="features">
+              <li>Free pickup &amp; delivery on orders of 20 lb or more</li>
+              <li>Community drop-off sites available</li>
+              <li>48-hour turnaround on weekdays</li>
+              <li>Any bag works</li>
+            </ul>
+            <a class="btn btn-block btn-secondary" href="#by-the-pound">Request a pickup</a>
+          </article>
+
+          <article class="price-card" aria-labelledby="plan-regular">
+            <h3 id="plan-regular">Regular Blue Bag</h3>
+            <p class="plan-for">Individual or couple</p>
+            <p class="price"><span class="amount">$155</span><span class="per">/month</span></p>
+            <p class="price-note">Plus monthly service fee</p>
+            <ul class="features">
+              <li>Up to 25 lb, picked up weekly</li>
+              <li>All your sheets and towels</li>
+              <li>Hypoallergenic wash</li>
+              <li>Weekly pickup &amp; delivery, 48-hour turnaround</li>
+            </ul>
+            <a class="btn btn-block btn-secondary" id="regular-checkout" style="display:none" hidden>Choose Regular</a>
+          </article>
+
+          <article class="price-card featured" aria-labelledby="plan-large">
+            <p class="badge">Best Value</p>
+            <h3 id="plan-large">XL Orange Bag</h3>
+            <p class="plan-for">Families</p>
+            <p class="price"><span class="amount">$185</span><span class="per">/month</span></p>
+            <p class="price-note">Plus monthly service fee</p>
+            <ul class="features">
+              <li>Up to 40 lb, picked up weekly</li>
+              <li>All your sheets and towels</li>
+              <li>Hypoallergenic wash</li>
+              <li>Weekly pickup &amp; delivery, 48-hour turnaround</li>
+            </ul>
+            <a class="btn btn-block" id="xl-checkout" style="display:none" hidden>Choose XL</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="by-the-pound" class="section section-tint" aria-labelledby="intake-title">
+      <div class="container narrow">
+        <h2 id="intake-title">Request laundry by the pound</h2>
+        <p>We’ll email you to confirm your pickup time. After we weigh your laundry, we’ll send a Stripe invoice.</p>
+        <p id="form-pending">The test inquiry form is pending.</p>
+        <p><a id="form-link" hidden>Open the test inquiry form in Google Forms</a></p>
+        <iframe id="intake-form" title="Laundry by the pound test inquiry form" height="1100" style="width:100%; border:0" loading="lazy" hidden></iframe>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <p class="footer-brand">Laundry Caddie</p>
+        <p>Laundry made easy. Lives made better.</p>
+      </div>
+      <div>
+        <p>Laundry Caddie is a social enterprise of <a href="https://arcjacksonville.org/">The Arc Jacksonville</a>, creating paid jobs for adults with intellectual and developmental differences.</p>
+        <p>&copy; <span id="year">2026</span> The Arc Jacksonville. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
+  <script src="signup-test.js" defer></script>
+</body>
+</html>
