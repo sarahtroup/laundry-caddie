@@ -17,25 +17,19 @@ The [care standards draft](care-standards-draft.html) is for review. After appro
 ## Microsoft Forms, SharePoint and invoices
 
 - Start with one shared Thursday pickup section for contact details. State the pickup day at the top. Collect separate First name, Last name, Email, Phone number, Street address, City, State and ZIP fields. Apartment or unit and pickup instructions are optional.
-- Ask **Is this pickup for your home or a business?** at the end of pickup details. List **Home** first and branch it directly to the residential care standards and Submit. Branch **Business** to the commercial eligibility question.
-- Ask businesses **What kind of laundry service do you need?** Offer **Occasional pickup** and **I’d like a quote for a large order or ongoing service**. Add this guidance: **Occasional business laundry is $2/lb up to 100 lb per month. If you’re unsure how much your laundry weighs, you can request a quote.** For the quote choice, branch to End of the form so the customer can submit their quote request using the contact details they already provided. Classify that submission as a quote inquiry and exclude it from pickup scheduling and care standards acceptance receipts. For occasional pickup, ask for business name, linen type and estimated monthly weight, then show commercial care standards and end at Submit.
-- Display the full applicable standards before a required **I have read and agree** choice that identifies the archived version. The earlier Word import predates this layout. Configure and test the routing in Microsoft Forms.
+- Ask **Is this pickup for your home or a business?** at the end of pickup details. List **Home** first and branch it directly to the shared **Care standards and agreement** section. Branch **Business** to the commercial eligibility question.
+- Ask businesses **What kind of laundry service do you need?** Offer **Occasional pickup** and **I’d like a quote for a large order or ongoing service**. Add this guidance: **Occasional business laundry is $2/lb up to 100 lb per month. If you’re unsure how much your laundry weighs, you can request a quote.** For the quote choice, branch to End of the form so the customer can submit their quote request using the contact details they already provided. Classify that submission as a quote inquiry and exclude it from pickup scheduling and care standards acceptance receipts. For occasional pickup, ask for business name, linen type and estimated monthly weight, then continue to the shared **Care standards and agreement** section.
+- Place **Care standards and agreement** last. Display the care standards before a single required **I have read and agree** choice that identifies the archived version. Use the residential and commercial headings within the same description to make clear which care practices apply. Both pickup paths submit from this section. Configure and test the routing in Microsoft Forms. The earlier Word import predates this layout.
 
-### Text to display before residential agreement
+### Text to display before the shared agreement
 
-We wash clothes, sheets, and towels with fragrance-free, hypoallergenic detergent. We add a color-catcher sheet and detergent booster to every load. We use the same wash and dry process for all items and dry on medium heat. Please keep delicates and specialty-care items at home.
+**Residential laundry.** We wash clothes, sheets, and towels with fragrance-free, hypoallergenic detergent. We add a color-catcher sheet and detergent booster to every load. We use the same wash and dry process for all items and dry on medium heat. Please keep delicates and specialty-care items at home.
 
 Before pickup, empty pockets and pre-treat stubborn stains if needed. Send your preferred detergent if you’d like us to use it, and include hangers for any garments you’d like returned hanging. Please keep out items soiled with any of the “Three P’s” (pee, poop, or puke).
 
-We’ll email you to confirm your pickup time. Thursday pickup is available for by-the-pound service. We weigh your laundry after pickup and send a Stripe invoice based on the measured weight.
+**Commercial laundry.** We wash commercial linens in commercial washers and dryers using gentle-on-skin, professional-grade detergent, sanitizer, and oxygen bleach. We can customize products to your needs. Occasional commercial orders are $2/lb up to 100 lb per month. For a large order, ongoing service, or help estimating weight, choose the quote option.
 
-### Text to display before occasional commercial agreement
-
-We wash commercial linens in commercial washers and dryers using gentle-on-skin, professional-grade detergent, sanitizer, and oxygen bleach. We can customize products to your needs.
-
-Occasional commercial orders are $2/lb. Use the by-the-pound form to request a pickup. For more than 100 lb in a month or for ongoing service, request a quote so we can confirm volume, pickup needs, and pricing.
-
-We’ll email you to confirm your pickup time. Thursday pickup is available for by-the-pound service. We weigh your laundry after pickup and send a Stripe invoice based on the measured weight.
+**Pickup and billing.** By-the-pound pickup is on Thursday. We’ll email you to confirm your pickup time. After we weigh your laundry, we’ll send a Stripe invoice based on the measured weight.
 
 ### Tracking and testing
 
