@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Subscribe | Laundry Caddie</title>
-  <meta name="description" content="Choose a Laundry Caddie weekly wash and fold subscription: Regular Bag $155/month or Large Bag $185/month, with free weekly pickup and delivery in Jacksonville, FL.">
+  <meta name="description" content="Choose a Laundry Caddie weekly wash and fold subscription: Regular Bag $159/month or Large Bag $189/month, with free weekly pickup and delivery in Jacksonville, FL.">
   <meta name="theme-color" content="#005e85">
   <link rel="icon" href="assets/laundry-caddie-icon-32.png" sizes="32x32" type="image/png">
   <link rel="apple-touch-icon" href="assets/laundry-caddie-icon-180.png">
@@ -22,8 +22,6 @@
     </div>
   </header>
 
-  <!-- DEMO NOTE: remove this banner once real Stripe Payment Links are connected -->
-  <p class="demo-banner" role="note"><strong>Demo:</strong> payment isn't connected yet. The next page shows a sketch of the Stripe checkout page customers will see at launch.</p>
 
   <main id="main" tabindex="-1">
     <section class="section subscribe" aria-labelledby="sub-title">
@@ -38,7 +36,7 @@
           <li><span>3</span>We schedule your pickup</li>
         </ol>
 
-        <form id="subscribe-form" class="subscribe-form" action="checkout.html" method="get" novalidate>
+        <form id="subscribe-form" class="subscribe-form">
           <fieldset class="plan-picker">
             <legend><h2 class="h3">Choose your bag</h2></legend>
 
@@ -47,8 +45,8 @@
               <span class="plan-body">
                 <span class="plan-name">Regular Bag</span>
                 <span class="plan-who">Individual or couple · up to 25 lb a week</span>
-                <span class="plan-price"><strong>$155</strong>/month</span>
-                <span class="plan-avg">Averages $1.44/lb over a year</span>
+                <span class="plan-price"><strong>$159</strong>/month</span>
+                <span class="plan-avg">Averages $1.53/lb over a year</span>
               </span>
             </label>
 
@@ -58,8 +56,8 @@
                 <span class="badge-inline">Best Value</span>
                 <span class="plan-name">Large Bag</span>
                 <span class="plan-who">Families · up to 40 lb a week</span>
-                <span class="plan-price"><strong>$185</strong>/month</span>
-                <span class="plan-avg">Averages $1.11/lb over a year</span>
+                <span class="plan-price"><strong>$189</strong>/month</span>
+                <span class="plan-avg">Averages $1.13/lb over a year</span>
               </span>
             </label>
           </fieldset>
@@ -83,12 +81,12 @@
 
           <div class="summary" aria-live="polite">
             <p class="summary-line"><span id="sum-plan">Large Bag</span> · weekly pickup &amp; delivery</p>
-            <p class="summary-total"><strong id="sum-price">$185</strong> per month</p>
+            <p class="summary-total"><strong id="sum-price">$189</strong> per month</p>
           </div>
 
           <p class="form-status" id="sub-status" role="status" aria-live="polite"></p>
           <p class="fine-print center">Laundry Caddie is a social enterprise of The Arc Jacksonville. You’ll see The Arc Jacksonville at checkout.</p>
-          <button class="btn btn-large btn-block" type="submit">
+          <button class="btn btn-large btn-block" type="submit" disabled>
             <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24"><rect x="5" y="10" width="14" height="10" rx="2" fill="none" stroke="currentColor" stroke-width="2.2"/><path d="M8 10V7a4 4 0 018 0v3" fill="none" stroke="currentColor" stroke-width="2.2"/></svg>
             Continue to secure checkout
           </button>
@@ -112,6 +110,6 @@
     </div>
   </footer>
 
-  <script src="script.js" defer></script>
+  <script src="script.js?v=stripe-subscriptions" defer></script>
 </body>
 </html>
