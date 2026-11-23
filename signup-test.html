@@ -84,9 +84,40 @@
         <h2 id="intake-title">Request laundry by the pound</h2>
         <p>By-the-pound pickup is available Monday through Thursday. We’ll email you to confirm your pickup time. After we weigh your laundry, we’ll send a Stripe invoice.</p>
         <p><a href="care-standards-draft.html#by-the-pound">Read the residential care standards and terms</a>.</p>
+        <form class="booking-form" id="pickup-layout-preview" onsubmit="return false">
+          <h3>Request a pickup</h3>
+          <p class="form-hint">Layout preview. Please use sample details. This form does not send requests.</p>
+          <div class="field"><label for="f-name">Full name</label><input id="f-name" name="name" autocomplete="name" required></div>
+          <div class="field-row">
+            <div class="field"><label for="f-email">Email</label><input id="f-email" name="email" type="email" autocomplete="email" required></div>
+            <div class="field"><label for="f-phone">Phone number</label><input id="f-phone" name="phone" type="tel" autocomplete="tel" required></div>
+          </div>
+          <div class="field-row">
+            <div class="field"><label for="f-address">Pickup address</label><input id="f-address" name="address" autocomplete="street-address" required></div>
+            <div class="field"><label for="f-zip">ZIP code</label><input id="f-zip" name="zip" autocomplete="postal-code" inputmode="numeric" pattern="[0-9]{5}" required></div>
+          </div>
+          <div class="field"><label for="f-area">Area of town</label>
+              <select id="f-area" name="neighborhood" required>
+                <option value="">Choose an area</option>
+                <option>Downtown, San Marco</option>
+                <option value="Miramar / San Jose / Beauclerc">Miramar area</option>
+                <option value="Riverside / Avondale / Ortega">Riverside area</option>
+                <option>Southside</option>
+                <option value="College campus">College campus</option>
+                <option>Other area</option>
+              </select>
+          </div>
+          <div class="field"><label for="pickup-day">Preferred pickup day</label>
+            <select id="pickup-day" name="day"><option>No preference</option><option>Monday</option><option>Tuesday</option><option>Wednesday</option><option>Thursday</option></select>
+          </div>
+        </form>
+
+        <details>
+          <summary>View the Microsoft Forms version</summary>
         <p id="form-pending">The test inquiry form is pending.</p>
         <p><a id="form-link" hidden>Open the test inquiry form in Microsoft Forms</a></p>
         <iframe id="intake-form" title="Laundry by the pound test inquiry form" height="1100" style="width:100%; border:0" loading="lazy" hidden></iframe>
+        </details>
 
         <h3>Commercial laundry</h3>
         <p>Occasional business laundry is $2/lb up to 100 lb per month. Use the pickup form and select Business. Tell us what you need washed and how often, and we’ll follow up by email. <a href="care-standards-draft.html#commercial">Read the commercial care standards</a>.</p>
