@@ -158,13 +158,10 @@ main:focus { outline: none; }
 .hero-points { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 0.5rem 1.4rem; color: var(--muted); font-weight: 600; }
 .hero-points li { display: inline-flex; align-items: center; gap: 0.4rem; }
 .hero-points svg { width: 22px; height: 22px; color: var(--primary); }
-.hero-art { max-width: 170px; margin: 0 auto; width: 100%; }
-@media (min-width: 600px) { .hero-art { max-width: 340px; } }
 @media (min-width: 900px) {
   .hero { padding: 5rem 0 5.5rem; }
   .hero-inner { grid-template-columns: 1.15fr 0.85fr; gap: 3rem; }
   .hero-actions .btn { flex: 0 0 auto; }
-  .hero-art { max-width: 440px; }
 }
 
 /* ---------- Sections ---------- */
@@ -453,8 +450,7 @@ input[aria-invalid="true"] { border-color: #b42318; }
 
 /* Homepage reviews, gift cards, and team photo */
 .review-grid,
-.gift-panel,
-.team-feature {
+.gift-panel {
   display: grid;
   gap: 1.25rem;
 }
@@ -467,7 +463,7 @@ input[aria-invalid="true"] { border-color: #b42318; }
 }
 .review-card blockquote { margin: 0; }
 .review-card figcaption { font-weight: 750; color: var(--primary-dark); }
-.gift-panel img, .team-feature img {
+.gift-panel img {
   display: block;
   width: 100%;
   height: auto;
@@ -475,9 +471,40 @@ input[aria-invalid="true"] { border-color: #b42318; }
 }
 @media (min-width: 760px) {
   .review-grid { grid-template-columns: repeat(3, 1fr); }
-  .gift-panel, .team-feature {
+  .gift-panel {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     align-items: center;
     gap: 2rem;
   }
+}
+
+/* Homepage hero photo and bag examples */
+.hero-photo img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius);
+}
+.bag-comparison {
+  max-width: 880px;
+  margin: 2rem auto 0;
+  padding: 1.25rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--tint);
+}
+.bag-comparison p { margin: 0.35rem 0 1rem; color: var(--muted); }
+.bag-comparison-grid { display: grid; gap: 1.125rem; }
+.bag-comparison figure { margin: 0; }
+.bag-comparison img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 2.46;
+  object-fit: cover;
+  border-radius: var(--radius-sm);
+}
+.bag-comparison figcaption { margin-top: 0.45rem; font-size: 0.9rem; }
+@media (min-width: 600px) {
+  .bag-comparison-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
