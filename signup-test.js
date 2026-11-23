@@ -6,7 +6,7 @@
     "regular-checkout": "",
     "xl-checkout": ""
   };
-  const microsoftFormsEmbedUrl = "";
+  const microsoftFormsEmbedUrl = "https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=kU0cOMrbAkasBdUZeNcOgHcLdQAlCHpGpGMbhHqOC01UOElTOTJSUzM5WVFFNllNS1Y5Q0ZESzFITC4u&embed=true";
   const formUrl = /^https:\/\/forms\.(?:office\.com|cloud\.microsoft)\/Pages\/ResponsePage\.aspx\?/i.test(microsoftFormsEmbedUrl)
     ? new URL(microsoftFormsEmbedUrl)
     : null;
