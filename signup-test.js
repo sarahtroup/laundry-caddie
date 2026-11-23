@@ -6,7 +6,8 @@
     "regular-checkout": "",
     "xl-checkout": ""
   };
-  const formUrl = "".replace(/\\?embedded=true$/, "");
+  const googleFormLink = "";
+  const formUrl = googleFormLink.replace(/\?embedded=true$/, "");
 
   const plans = Object.entries(checkoutLinks);
   const isTestCheckout = (url) => /^https:\/\/buy\.stripe\.com\/test_[A-Za-z0-9]+$/.test(url);
