@@ -450,3 +450,34 @@ input[aria-invalid="true"] { border-color: #b42318; }
 .sc-frame figcaption { padding: 12px 20px; background: #f6f9f9; border-top: 1px solid #e3e8ee; color: var(--muted); font-size: 0.9rem; }
 @media (max-width: 400px) { .sc-brands { display: none; } .sc-lbl { min-width: 0; } }
 .sc-split .sc-val:first-child { flex: 2.2; overflow-wrap: normal; }
+
+/* Homepage reviews, gift cards, and team photo */
+.review-grid,
+.gift-panel,
+.team-feature {
+  display: grid;
+  gap: 1.25rem;
+}
+.review-card {
+  margin: 0;
+  padding: 1.25rem;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+}
+.review-card blockquote { margin: 0; }
+.review-card figcaption { font-weight: 750; color: var(--primary-dark); }
+.gift-panel img, .team-feature img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-sm);
+}
+@media (min-width: 760px) {
+  .review-grid { grid-template-columns: repeat(3, 1fr); }
+  .gift-panel, .team-feature {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: center;
+    gap: 2rem;
+  }
+}
