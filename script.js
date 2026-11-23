@@ -97,9 +97,24 @@
 
   // Buttons with data-service preselect the form's service dropdown
   var serviceSelect = document.getElementById("f-service");
+  var thursday = document.getElementById("pickup-thursday");
+  function syncPickupDays() {
+    thursday.disabled = serviceSelect.value !== "Pay as You Go";
+    if (thursday.disabled && thursday.checked) {
+      thursday.form.querySelector('input[name="day"][value="Monday"]').checked = true;
+    }
+  }
+  if (serviceSelect && thursday) {
+    serviceSelect.addEventListener("change", syncPickupDays);
+    window.addEventListener("pageshow", syncPickupDays);
+    syncPickupDays();
+  }
   document.querySelectorAll("[data-service]").forEach(function (link) {
     link.addEventListener("click", function () {
-      if (serviceSelect) serviceSelect.value = link.getAttribute("data-service");
+      if (serviceSelect) {
+        serviceSelect.value = link.getAttribute("data-service");
+        if (thursday) syncPickupDays();
+      }
     });
   });
 

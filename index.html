@@ -305,7 +305,7 @@
           <details>
             <summary>How fast is the turnaround?</summary>
             <div class="faq-body">
-              <p>About 48 hours on weekdays. We pick up on Mondays, Tuesdays or Wednesdays, based on availability. After you sign up, we'll email you a weekly time slot for your neighborhood or campus.</p>
+              <p>About 48 hours on weekdays. We pick up on Mondays, Tuesdays or Wednesdays, based on availability. Thursday pickup is available for laundry by the pound only. After you sign up, we'll email you a weekly time slot for your neighborhood or campus.</p>
             </div>
           </details>
           <details>
@@ -418,6 +418,7 @@
               <label><input type="radio" name="day" value="Monday" checked> Monday</label>
               <label><input type="radio" name="day" value="Tuesday"> Tuesday</label>
               <label><input type="radio" name="day" value="Wednesday"> Wednesday</label>
+              <label><input id="pickup-thursday" type="radio" name="day" value="Thursday" disabled> Thursday (laundry by the pound only)</label>
             </div>
           </fieldset>
           <div class="field">
@@ -444,6 +445,6 @@
     </div>
   </footer>
 
-  <script src="script.js" defer></script>
+  <script src="script.js?v=thursday-pickup" defer></script>
 </body>
 </html>
