@@ -2,6 +2,8 @@
 
 Open `signup-test.html` from a local or branch preview. The page uses the existing branding and pricing cards and has no incoming links from the public site. The current Arc signup and Square gift card links stay in place until the replacement is reviewed and approved.
 
+The [care standards draft](care-standards-draft.html) is for review. After approval, archive the approved version and have each checkout or form identify the exact sections that apply. Residential subscriptions and residential by-the-pound requests share the residential care instructions and have separate service terms. Commercial inquiries should capture business needs, and any required agreement should reference the commercial terms that apply to the request. Confirm the commercial garment and linen scope, pickup terms, and pricing before configuring commercial acceptance.
+
 ## Stripe Checkout
 
 1. In a Stripe sandbox, create two Payment Links for the Regular Blue Bag ($155/month) and XL Orange Bag ($185/month). Add a required monthly service-fee price as a second line item on each link. If the separate fee cannot be used, use flat recurring prices of $159 and $189 and update the preview pricing copy at the same time. Verify both the first charge and recurring invoice total.
